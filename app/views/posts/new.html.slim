@@ -1,0 +1,11 @@
+= form_with(model: @post, local: true) do |f|
+  .mb-3
+    = f.label :header
+    = f.text_field :header,  class: "form-control"
+
+  .mb-3
+    = f.label :body
+    = f.text_area :body, rows: "3", class: "form-control"
+
+  .mb-3
+    = f.submit class: "btn btn-outline-success"
