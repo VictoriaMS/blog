@@ -38,6 +38,7 @@ gem 'slim-rails'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
+gem 'devise'
 
 group :development, :test do
   gem 'rspec-rails'
