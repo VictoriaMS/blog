@@ -20,12 +20,13 @@ html lang="en"
         li.nav-item
           a.nav-link.active[aria-current="page" href="#"]
             | Активная
+
+        - if user_signed_in?
+          li.nav-item
+            li= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link'
+        - else
         li.nav-item
-          a.nav-link[href="#"]
-            | Ссылка
-        li.nav-item
-          a.nav-link[href="#"]
-            | Ссылка
+          li= link_to 'Sign in', new_user_session_path, class: 'nav-link'
         li.nav-item
           a.nav-link.disabled
             | Отключенная
