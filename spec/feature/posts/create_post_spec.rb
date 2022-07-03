@@ -9,6 +9,7 @@ feature 'create post', %q{
   let!(:user) { create :user }
 
   scenario 'create post' do 
+    sign_in(user)
     
     visit new_post_path 
 
