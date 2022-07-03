@@ -1,0 +1,11 @@
+.mb-3
+  .card.text-center
+    .card-body
+      h5.card-title
+        = @post.header
+      p.card-text
+        = @post.body
+    .card-footer.text-muted
+      = @post.user.full_name
+
+  = link_to 'Back', posts_path, class: "card-link"
