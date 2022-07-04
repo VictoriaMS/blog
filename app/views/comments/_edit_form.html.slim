@@ -1,0 +1,6 @@
+= form_with(model: comment, method: :patch, local: true, html: { id: "edit-comment-#{comment.id}"}, class: 'edit') do |f|
+  .mb-3
+    = f.label 'Edit a comment', class:  'form-label'  
+    = f.text_area :body, class: 'form-control'
+  .mb-3
+    = f.submit class: "btn btn-outline-success"

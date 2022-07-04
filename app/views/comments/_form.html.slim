@@ -1,0 +1,8 @@
+= form_with(model: [post, comment], local: true) do |f|
+  .mb-3
+    = f.label 'Leave a comment', class:  'form-label'  
+    = f.text_area :body, class: 'form-control'
+
+  .mb-3
+    = f.submit class: "btn btn-outline-success"
+  
