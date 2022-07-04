@@ -22,7 +22,6 @@ class CommentsController < ApplicationController
   end
 
   def update 
-    @comment = Comment.find(params[:id])
     @comment.update(comment_params)
     redirect_to post_path(@comment.post)
   end
