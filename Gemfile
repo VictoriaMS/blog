@@ -40,6 +40,7 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'devise'
 gem 'cancancan'
+gem "responders"
 
 group :development, :test do
   gem 'rspec-rails'
