@@ -4,4 +4,8 @@
       = comment.body 
     .blockquote-footer
       = comment.user.full_name
+    - if signed_in?  
+      - if current_user.author_of?(comment)
+        h6= link_to "Edit comment", '', class: "link-primary edit-link", data: { comment_id: comment.id }
 
+  = render 'comments/edit_form', comment: comment

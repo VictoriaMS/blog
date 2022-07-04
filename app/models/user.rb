@@ -12,4 +12,8 @@ class User < ApplicationRecord
   def full_name
     "#{name} #{last_name}"
   end
+
+  def author_of?(resource)
+    id == resource.user.id
+  end
 end

@@ -18,6 +18,7 @@ class Ability
   def user_abilities
     guest_abilities
     can :create, Comment
+    can :update, Comment
   end
 
   def guest_abilities
