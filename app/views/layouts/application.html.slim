@@ -18,18 +18,17 @@ html lang="en"
     .container
       ul.nav.justify-content-center
         li.nav-item
-          a.nav-link.active[aria-current="page" href="#"]
-            | Активная
-
+          li=link_to 'All posts', root_path, class: 'nav-link'
         - if user_signed_in?
           li.nav-item
             li= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link'
+          - if current_user.author? 
+            li.nav-item 
+              li=link_to 'Write post', new_post_path, class: 'nav-link'
         - else
           li.nav-item
-            li= link_to 'Sign in', new_user_session_path, class: 'nav-link'
-        li.nav-item
-          a.nav-link.disabled
-            | Отключенная
+            li= link_to 'Sign in', new_user_session_path, class: 'nav-link'          
+
 
 
     .container
