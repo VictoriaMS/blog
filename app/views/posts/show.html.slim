@@ -9,3 +9,9 @@
       = @post.user.full_name
 
   = link_to 'Back', posts_path, class: "card-link"
+
+.comments 
+  = render @post.comments
+
+= render 'comments/form', post: @post, comment: @comment
+

@@ -1,0 +1,7 @@
+- if comment.persisted? 
+  .blockquote
+    .mb-0
+      = comment.body 
+    .blockquote-footer
+      = comment.user.full_name
+
