@@ -41,6 +41,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'cancancan'
 gem "responders"
+gem 'will_paginate', '~> 3.1.7'
 
 group :development, :test do
   gem 'rspec-rails'

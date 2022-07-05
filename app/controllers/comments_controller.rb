@@ -6,7 +6,6 @@ class CommentsController < ApplicationController
 
   def destroy
     @post = @comment.post
-
     respond_with(@comment.destroy, location: -> { post_path(@post) })
   end
   
@@ -14,6 +13,11 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params.merge(user: current_user))
     respond_with @comment, location: -> { post_path(@post) }
+  end
+
+  def update 
+    @comment.update(comment_params)
+    respond_with @comment, location: -> { post_path(@comment.post) }
   end
 
   def update 
