@@ -6,7 +6,6 @@ class CommentsController < ApplicationController
 
   def destroy
     @post = @comment.post
-
     respond_with(@comment.destroy, location: -> { post_path(@post) })
   end
   
@@ -23,7 +22,7 @@ class CommentsController < ApplicationController
 
   def update 
     @comment.update(comment_params)
-    redirect_to post_path(@comment.post)
+    respond_with @comment, location: -> { post_path(@comment.post) }
   end
 
   private 
