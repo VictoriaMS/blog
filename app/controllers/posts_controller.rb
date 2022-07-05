@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :create_comment, only: :show
   
   def index 
-    respond_with(@posts = Post.all)
+    @posts = Post.paginate(page: params[:page], per_page: 7)
   end
 
   def new 
