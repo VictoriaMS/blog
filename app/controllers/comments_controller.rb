@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @post = @comment.post
+
     respond_with(@comment.destroy, location: -> { post_path(@post) })
   end
   
