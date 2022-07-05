@@ -1,8 +1,9 @@
-.col
-  .card.h-100
-    .card-body
-      h5.card-title
-        = post.header
-      p.card-text 
-        = post.body.truncate(100)
-      = link_to "Read", post_path(post), class: "card-link"
+.col  
+  .mb-3
+    .card.h-100.border-dark
+      .card-body
+        h5.card-title
+          = post.header
+        p.card-text 
+          = post.body.truncate(200)
+        = link_to "Read", post_path(post), class: "card-link"

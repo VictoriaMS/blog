@@ -13,7 +13,7 @@ feature 'wiewing posts', %q{
 
     posts.each do |post|
       expect(page).to have_content post.header
-      expect(page).to have_text post.body.truncate(100)
+      expect(page).to have_text post.body.truncate(200)
     end
   end
 end
