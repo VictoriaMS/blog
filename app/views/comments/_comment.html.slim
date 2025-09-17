@@ -5,6 +5,7 @@
     .blockquote-footer
       = comment.user.full_name
       = comment.created_at.strftime("%Y-%m-%d %H:%M:%S")
+      = comment.updated_at.strftime("%Y-%m-%d %H:%M:%S")
     - if signed_in?  
       - if current_user.author_of?(comment)
         h6
