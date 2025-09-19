@@ -7,6 +7,7 @@
         = @post.body
     .card-footer.text-muted
       = @post.user.full_name
+      = @post.created_at.strftime('%d.%m.%Y %H:%M')
 
   = link_to 'Back', posts_path, class: "card-link"
 
