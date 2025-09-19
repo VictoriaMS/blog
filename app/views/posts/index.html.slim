@@ -1,2 +1,5 @@
-= render @posts
-= will_paginate @posts, :container => false
+.row.row-cols-1.row-cols-md-2.row-cols-lg-3.g-4
+  = render @posts
+
+.d-flex.justify-content-center.mt-4
+  = will_paginate @posts, :container => false

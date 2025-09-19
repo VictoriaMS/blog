@@ -1,17 +1,28 @@
 .mb-3
-  .card.text-center
+  .card.text-center.post-detail-card
     .card-body
       h5.card-title
         = @post.header
       p.card-text
         = @post.body
-    .card-footer.text-muted
-      = @post.user.full_name
-      = @post.created_at.strftime('%d.%m.%Y %H:%M')
+    .card-footer.text-muted.d-flex.justify-content-between.align-items-center
+      .author-info
+        i.fas.fa-user.me-2
+        = @post.user.full_name
+      .date-info
+        i.fas.fa-calendar.me-2
+        = @post.created_at.strftime('%d.%m.%Y %H:%M')
 
-  = link_to 'Back', posts_path, class: "card-link"
+  .text-center.mb-4
+    = link_to posts_path, class: "card-link" do
+      i.fas.fa-arrow-left.me-2
+      | Назад к постам
 
 .comments 
+  .text-center.mb-4
+    h3
+      i.fas.fa-comments.me-2
+      | Комментарии
   = render @post.comments
 
 = render 'comments/form', post: @post, comment: @comment
