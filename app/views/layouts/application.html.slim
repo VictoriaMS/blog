@@ -9,13 +9,24 @@ html lang="en"
     = csrf_meta_tags
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
+    link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     /! Le HTML5 shim, for IE6-8 support of HTML elements
     /[if lt IE 9]
       = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"
 
 
   body
+    // Floating decorative elements
+    .floating-decoration.circle-1
+    .floating-decoration.circle-2  
+    .floating-decoration.triangle
+    
     .container
+      // Decorative blog header
+      .blog-header
+        h1 ✨ Victoria's Blog ✨
+        .subtitle Добро пожаловать в мой уютный блог!
+      
       ul.nav.justify-content-center
         li.nav-item
           li=link_to 'All posts', root_path, class: 'nav-link'

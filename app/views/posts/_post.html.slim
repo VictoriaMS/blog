@@ -1,9 +1,16 @@
 .col  
   .mb-3
-    .card.h-100.border-dark
+    .card.h-100.post-card
       .card-body
         h5.card-title
+          i.fas.fa-star.me-2
           = post.header
         p.card-text 
           = post.body.truncate(200)
-        = link_to "Read", post_path(post), class: "card-link"
+        .d-flex.justify-content-between.align-items-center.mt-3
+          = link_to post_path(post), class: "card-link" do
+            i.fas.fa-book-open.me-2
+            | Читать далее
+          small.text-muted
+            i.fas.fa-clock.me-1
+            = post.created_at.strftime('%d.%m')
