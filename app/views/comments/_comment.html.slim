@@ -1,15 +1,23 @@
 - if comment.persisted? 
-  .blockquote
-    .mb-0
-      = comment.body 
-    .blockquote-footer
-      = comment.user.full_name
-      = comment.created_at.strftime("%Y-%m-%d %H:%M:%S")
-      = comment.updated_at.strftime("%Y-%m-%d %H:%M:%S")
-    - if signed_in?  
-      - if current_user.author_of?(comment)
-        h6
-          = link_to "Edit comment", '', class: "link-primary edit-link card-link", data: { comment_id: comment.id }
-          = link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' }, class: 'card-link'
+  .comment-card.mb-3
+    .card.border-0
+      .card-body
+        .d-flex.align-items-start
+          .comment-avatar.me-3
+            i.fas.fa-user-circle.fa-2x.text-primary
+          .comment-content.flex-grow-1
+            p.mb-2 = comment.body 
+            .comment-meta.d-flex.justify-content-between.align-items-center
+              .author-info
+                strong.text-primary = comment.user.full_name
+                small.text-muted.ms-2
+                  i.fas.fa-calendar.me-1
+                  = comment.created_at.strftime("%d.%m.%Y %H:%M")
+              - if signed_in? && current_user.author_of?(comment)
+                .comment-actions
+                  = link_to '', class: "btn btn-sm btn-outline-primary me-1 edit-link", data: { comment_id: comment.id }, title: "Редактировать" do
+                    i.fas.fa-edit
+                  = link_to comment_path(comment), method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-sm btn-outline-danger', title: "Удалить" do
+                    i.fas.fa-trash
 
   = render 'comments/edit_form', comment: comment
